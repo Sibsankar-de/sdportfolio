@@ -1,0 +1,30 @@
+[
+    {
+        "text": "React",
+        "xml": "<i class='ri-reactjs-line'></i>"
+    },
+    {
+        "text": "Node",
+        "xml": "<i class='ri-nodejs-line'></i>"
+    },
+    {
+        "text":"CSS",
+        "xml":"<i class='ri-css3-line'></i>"
+    },
+    {
+        "text": "html",
+        "xml":"<i class='ri-html5-line'></i>"
+    },
+    {
+        "text": "api",
+        "xml":"<i class='ri-server-line'></i>"
+    },
+    {
+        "text": "responsive",
+        "xml":"<i class='ri-crop-line'></i>"
+    },
+    {
+        "text": "javascript",
+        "xml":"<i class='ri-javascript-fill'></i>"
+    }
+]

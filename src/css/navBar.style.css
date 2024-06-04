@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+.pf-nav-bar {
+    display: grid;
+    align-items: center;
+    grid-auto-flow: column;
+    width: 100vw;
+    height: 2.8em;
+    background-color: var(--pf-nav-col-light);
+    gap: 4em;
+    position: fixed;
+    animation: navBarAnim 0.3s 1;
+    z-index: 2;
+}
+
+@keyframes navBarAnim {
+    0% {
+        transform: translateY(-3em);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.pf-logo-box {
+    font-size: 1.3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: end;
+}
+
+.pf-logo-st-box {
+    background-color: var(--pf-col-violet);
+    color: white;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 0.15em;
+}
+
+.pf-logo-st {
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 1.3em;
+}
+
+.pf-logo-back-st {
+    background-color: var(--pf-col-violet);
+}
+
+.pf-logo-tail {
+    font-size: 1.2em;
+    font-weight: bold;
+    font-family: "Caveat", cursive;
+    font-style: normal;
+    justify-self: center;
+}
+
+.pf-logo-t-1 {
+    color: var(--pf-col-violet);
+}
+
+.pf-nav-opt-box {
+    justify-self: end;
+}
+
+.pf-nav-opt-box ul {
+    display: flex;
+    gap: 0.4em;
+}
+
+.pf-nav-opt-box ul li a {
+    text-decoration: none;
+    color: #878787;
+    font-weight: bold;
+    transition: 0.3s;
+    height: 2.8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1em;
+}
+
+.pf-nav-opt-box ul li:hover a {
+    color: #4b4b4b;
+}
+
+.pf-nav-opt-active {
+    position: absolute;
+    transition: 0.4s;
+    opacity: 0;
+    display: flex;
+    gap: 2px;
+    width: 0;
+}
+
+.pf-nav-opt-br {
+    height: 2.8em;
+    border-bottom: 3px solid var(--pf-col-violet);
+    flex-shrink: 1;
+    flex-grow: 1;
+}
+
+.pf-n-c1 {
+    flex-grow: 7;
+    flex-shrink: 0;
+}
+
+.pf-nav-clicked-opt .pf-nav-opt-active {
+    width: 4rem;
+    opacity: 1;
+}
+
+.pf-nav-clicked-opt {
+    color: var(--pf-col-nav-opt-dark) !important;
+}
+
+/* responsive CSS  */
+
+@media only screen and (max-width: 950px) {
+    .pf-nav-bar {
+        gap: 5vw;
+    }
+
+}
+
+@media only screen and (max-width: 900px) {
+    .pf-nav-opt-box ul {
+        gap: 0.1em;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .pf-nav-bar {
+        gap: 3vw;
+    }
+
+    .pf-logo-st {
+        font-size: 1.2em;
+    }
+
+    .pf-logo-tail {
+        font-size: 1.1em;
+    }
+
+}
+
+@media only screen and (max-width: 730px) {
+    .pf-nav-bar {
+        gap: 3vw;
+    }
+
+    .pf-logo-st {
+        font-size: 1.2em;
+    }
+
+    .pf-logo-tail {
+        font-size: 1.1em;
+    }
+
+    .pf-nav-opt-box ul li a {
+        padding: 0 0.7em;
+    }
+
+    .pf-nav-clicked-opt .pf-nav-opt-active {
+        width: 3rem;
+    }
+
+}
+
+@media only screen and (max-width: 650px) {
+    .pf-logo-t-1 {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 545px) {
+    .pf-nav-bar {
+        gap: 0;
+    }
+
+    .pf-nav-bar .pf-nav-bar-toogle-box {
+        display: none !important;
+    }
+}
+
+@media only screen and (max-width: 455px) {
+    .pf-logo-tail {
+        display: none;
+    }
+
+}
+
+@media only screen and (max-width: 385px) {
+    .pf-nav-bar {
+        justify-content: center;
+    }
+
+    .pf-logo-box {
+        display: none;
+    }
+
+}
+
+@media only screen and (max-width: 350px) {
+    .pf-nav-opt-box ul li a {
+        padding: 0 0.6em;
+    }
+
+}
+
+@media only screen and (max-width: 330px) {
+    .pf-nav-bar {
+        display: none;
+    }
+
+}

@@ -10,6 +10,8 @@ import projectData from '../json/projectData.json';
 import tagIconData from '../json/tagLogoData.json';
 import { useActiveSection } from '../hooks/activeSection';
 import { ScrollAnimContainer } from '../utils/scroll-anim-container';
+import { marked } from 'marked';
+import DOMPurify from 'dompurify';
 
 export const ProjectPage = () => {
     const settings = {
@@ -82,6 +84,14 @@ const ProjectItemCard = ({ project, onImgClick }) => {
     const boxRef = useRef(null);
 
     const [openDesBox, setOpenDesBox] = useState(false);
+
+    // Convert text to marked element
+    const [projectDescription, setProjectDescription] = useState('')
+    useEffect(() => {
+        const markedContent = marked(project?.description || '')
+        const purifiedContent = DOMPurify.sanitize(markedContent)
+        setProjectDescription(purifiedContent)
+    }, [project])
     return (
         <>
 
@@ -106,8 +116,8 @@ const ProjectItemCard = ({ project, onImgClick }) => {
                     <div onClick={() => setOpenDesBox(true)}>
                         <pre className='pf-proj-p-cont-box-des-line'>
                             <span className='pf-st-quote-symbol mx-1'><i className="ri-double-quotes-l"></i></span>
-                            <span>{parse(project?.description.slice(0, 300) || 'No description')}</span>
-                            {project?.description?.length > 300 && <span className='fw-bold pf-col-fade mx-1 pf-cursor-pointer'>...more</span>}
+                            <span>{parse(projectDescription.slice(0, 300)+'...' || 'No description')}</span>
+                            {project?.description?.length > 300 && <span className='fw-bold pf-col-fade mx-1 pf-cursor-pointer'>full description {'>'}</span>}
                         </pre>
                     </div>
                 </section>
@@ -161,7 +171,7 @@ const ProjectItemCard = ({ project, onImgClick }) => {
                 <div>
                     <pre className='pf-proj-p-cont-box-des-line'>
                         <span className='pf-st-quote-symbol mx-1'><i className="ri-double-quotes-l"></i></span>
-                        <span>{parse(project?.description || 'No description')}</span>
+                        <span>{parse(projectDescription || 'No description')}</span>
                     </pre>
                 </div>
             </div>

@@ -40,7 +40,7 @@ export const ProjectPage = () => {
     }, [showImgPopup])
 
     const [projectList, setProjectList] = useState(null)
-    const apiUri = process.env.REACT_APP_API_URI
+    const apiUri = process.env.REACT_APP_API_URI;
     useEffect(() => {
         const fetchList = async () => {
             try {

@@ -106,7 +106,7 @@ export const ServicesPage = () => {
                     </section>
                 </div>
                 <div className='pf-cont-sec-form-box mb-5'>
-                    <div className='mb-0 text-success'><span><i class="ri-information-2-line"></i></span> <span>Please use a valid email to get reply</span></div>
+                    <div className='mb-0 text-success'><span><i className="ri-information-2-line"></i></span> <span>Please use a valid email to get reply</span></div>
                     <form action="" className='d-grid gap-3' onSubmit={mailSubmitHandler}>
                         <div>
                             {messageObj.email.length > 0 &&

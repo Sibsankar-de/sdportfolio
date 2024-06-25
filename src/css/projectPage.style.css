@@ -166,6 +166,12 @@
     max-height: 65vh;
 }
 
+.pf-project-load-box{
+    height: 50vh;
+    display: flex;
+    align-items: center;
+}
+
 @keyframes fullDesBoxAnim {
     0% {
         opacity: 0;

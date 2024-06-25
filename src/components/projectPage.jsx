@@ -12,6 +12,8 @@ import { useActiveSection } from '../hooks/activeSection';
 import { ScrollAnimContainer } from '../utils/scroll-anim-container';
 import { marked } from 'marked';
 import DOMPurify from 'dompurify';
+import axios from "axios"
+import { LoadingDot } from '../utils/loading-spinner';
 
 export const ProjectPage = () => {
     const settings = {
@@ -37,6 +39,23 @@ export const ProjectPage = () => {
         document.getElementsByTagName('body')[0].style.overflowY = showImgPopup ? 'hidden' : 'scroll';
     }, [showImgPopup])
 
+    const [projectList, setProjectList] = useState(null)
+    const apiUri = process.env.REACT_APP_API_URI
+    useEffect(() => {
+        const fetchList = async () => {
+            try {
+                await axios.get(`${apiUri}/api/v1/project/project-list`, {
+                    withCredentials: true
+                })
+                    .then(res => {
+                        setProjectList(res.data?.data)
+                    })
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        fetchList()
+    }, [])
     return (
         <div className='pf-project-page-cont-container'>
             <ScrollAnimContainer activeSec={'projects'} animDirection='top'>
@@ -46,17 +65,19 @@ export const ProjectPage = () => {
             </ScrollAnimContainer>
             <ScrollAnimContainer activeSec={'projects'} animDirection='left'>
                 <ul className='d-flex'>
-                    <Slider {...settings} className='pf-project-p-slider-box'>
+                    {projectList && <Slider {...settings} className='pf-project-p-slider-box'>
                         {
-                            projectData.map((project, index) => {
+                            projectList?.map((project, index) => {
                                 return (
+                                    project?.active &&
                                     <li className='pf-proj-p-slide-cont' key={index}>
                                         <ProjectItemCard onImgClick={getImg} project={project} />
                                     </li>
                                 )
                             })
                         }
-                    </Slider>
+                    </Slider>}
+                    {!projectList && <div className='pf-project-load-box'><LoadingDot width={50} /></div>}
                 </ul>
             </ScrollAnimContainer>
             {showImgPopup && <ImgShowPopup onClose={() => setShowImgPopup(false)} openState={showImgPopup} popupRef={popupRef} imgList={imgList} initIndex={intIndex} />}
@@ -79,7 +100,7 @@ const ProjectItemCard = ({ project, onImgClick }) => {
     // })
 
     const imgClickHandler = (index) => {
-        onImgClick(true, project?.imgList, index)
+        onImgClick(true, project?.imageList, index)
     }
     const boxRef = useRef(null);
 
@@ -98,11 +119,11 @@ const ProjectItemCard = ({ project, onImgClick }) => {
             <div className={`pf-project-p-cont-box pf-project-cont-box-anim ${openDesBox && 'pf-project-p-cont-box-disabled'}`} ref={boxRef}>
                 <section className='pf-proj-p-cont-box-img-box'>
                     <Swiper {...swiperOptions} className='pf-project-p-img-slider-box' navigation >
-                        {project.imgList?.map((img, index) => {
+                        {project?.imageList?.map((img, index) => {
                             return (
                                 <SwiperSlide key={index}>
                                     <div className='pf-proj-img-sl-box'>
-                                        <img src={require(`../assets/img/${img?.imgUrl}`)} alt="" draggable={false} onClick={() => imgClickHandler(index)} />
+                                        <img src={img?.imageUrl || require(`../assets/img/blank-image.png`)} alt="" draggable={false} onClick={() => imgClickHandler(index)} />
                                     </div>
                                 </SwiperSlide>
                             )
@@ -110,31 +131,31 @@ const ProjectItemCard = ({ project, onImgClick }) => {
                     </Swiper>
                 </section>
                 <section className='pf-proj-p-cont-box-heading-box'>
-                    <div><span>{project.title || `Untitled ${project._id}`}</span></div>
+                    <div><span>{project?.title || `Untitled ${project?._id}`}</span></div>
                 </section>
                 <section className='pf-proj-p-cont-box-des-box'>
                     <div onClick={() => setOpenDesBox(true)}>
                         <pre className='pf-proj-p-cont-box-des-line'>
                             <span className='pf-st-quote-symbol mx-1'><i className="ri-double-quotes-l"></i></span>
-                            <span>{parse(projectDescription.slice(0, 300)+'...' || 'No description')}</span>
+                            <span>{parse(projectDescription.slice(0, 300) + '...' || 'No description')}</span>
                             {project?.description?.length > 300 && <span className='fw-bold pf-col-fade mx-1 pf-cursor-pointer'>full description {'>'}</span>}
                         </pre>
                     </div>
                 </section>
                 <section className='pf-proj-p-cont-box-btn-box'>
                     {
-                        project.buttons?.map((button, index) => {
+                        project?.buttons?.map((button, index) => {
                             return (
-                                button.type === 'repository' ?
-                                    <div key={index}>
-                                        <a href={button.url} target={'_blank'}>
+                                button.buttonType === 'repository' ?
+                                    button.active && <div key={index}>
+                                        <a href={button.buttonUrl} target={'_blank'}>
                                             <button className="btn pf-btn-dblue">
                                                 <span><i className="ri-github-fill"></i></span> <span>View Repository</span>
                                             </button>
                                         </a>
                                     </div> :
-                                    <div key={index}>
-                                        <a href={button.url} target={'_blank'}>
+                                    button.active && <div key={index}>
+                                        <a href={button.buttonUrl} target={'_blank'}>
                                             <button className="btn pf-btn-dsblue ">
                                                 <span><i className="ri-global-line"></i></span> <span>Visit Website</span>
                                             </button>
@@ -147,7 +168,7 @@ const ProjectItemCard = ({ project, onImgClick }) => {
                 <section className='pf-proj-p-cont-box-tag-box'>
                     <ul>
                         {
-                            project.tags?.map((tag, index) => {
+                            project?.tagList?.map((tag, index) => {
                                 const ico = tagIconData.find(e => tag?.toLowerCase().includes(e.text.toLowerCase()))
                                 return (
                                     <li key={index}>
@@ -164,9 +185,9 @@ const ProjectItemCard = ({ project, onImgClick }) => {
             <div className={`pf-project-p-cont-box pf-project-full-des-box pf-project-cont-box-anim ${!openDesBox && 'pf-project-p-cont-box-disabled'}`} >
                 <div className='d-flex gap-3 align-items-center'>
                     <div>
-                        <button onClick={() => setOpenDesBox(false)} className='pf-back-arrow-btn'><span><i class="ri-arrow-left-s-line fs-5"></i></span></button>
+                        <button onClick={() => setOpenDesBox(false)} className='pf-back-arrow-btn'><span><i className="ri-arrow-left-s-line fs-5"></i></span></button>
                     </div>
-                    <div className='pf-proj-p-cont-box-heading-box'><span>{project.title || `Untitled ${project._id}`}</span></div>
+                    <div className='pf-proj-p-cont-box-heading-box'><span>{project?.title || `Untitled ${project._id}`}</span></div>
                 </div>
                 <div>
                     <pre className='pf-proj-p-cont-box-des-line'>
@@ -195,7 +216,7 @@ const ImgShowPopup = ({ onClose, openState, popupRef, imgList, initIndex }) => {
         <div className='pf-img-show-popup-back fade-in-anim' >
             <div className='pf-img-show-popup-container' ref={popupRef}>
                 <div className='pf-img-show-popup-close-btn-box'>
-                    <button className='pf-img-popup-close-btn' onClick={() => onClose()}><span><i class="ri-close-large-line fs-4"></i></span></button>
+                    <button className='pf-img-popup-close-btn' onClick={() => onClose()}><span><i className="ri-close-large-line fs-4"></i></span></button>
                 </div>
                 <div>
                     <Swiper {...swiperOptions} className='pf-img-box-popup-swiper' navigation>
@@ -203,7 +224,7 @@ const ImgShowPopup = ({ onClose, openState, popupRef, imgList, initIndex }) => {
                             imgList?.map((img, index) => {
                                 return (
                                     <SwiperSlide key={index} className='pf-img-popup-item-slide'>
-                                        <div className='pf-img-show-box-img-box'><img src={require(`../assets/img/${img?.imgUrl}`)} alt="" /></div>
+                                        <div className='pf-img-show-box-img-box'><img src={img?.imageUrl || require(`../assets/img/blank-image.png`)} alt="" /></div>
                                     </SwiperSlide>
                                 )
                             })

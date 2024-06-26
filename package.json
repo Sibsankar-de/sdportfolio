@@ -1,6 +1,5 @@
 {
   "name": "portfolio-web-page",
-  "homepage": "https://myusername.github.io/sdportfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

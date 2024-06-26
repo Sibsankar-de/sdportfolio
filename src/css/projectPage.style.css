@@ -109,6 +109,16 @@
     font-size: inherit;
     margin-bottom: 0;
     line-height: 1.4em;
+
+    & h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        margin-bottom: 0;
+    }
 }
 
 .pf-proj-p-cont-box-btn-box {
@@ -166,7 +176,7 @@
     max-height: 65vh;
 }
 
-.pf-project-load-box{
+.pf-project-load-box {
     height: 50vh;
     display: flex;
     align-items: center;
@@ -398,7 +408,7 @@
         width: 100vw;
     }
 
-    .pf-img-show-box-img-box{
+    .pf-img-show-box-img-box {
         height: 85vh;
     }
 

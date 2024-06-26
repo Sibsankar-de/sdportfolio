@@ -1,6 +1,7 @@
 {
-    "name": "Sibsankar De",
+    "name": "SibsankarDe",
     "short_name": "Portfolio",
+    "start_url": "/index.html",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",

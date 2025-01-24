@@ -1,0 +1,142 @@
+.pf-skill-page-cont-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.pf-skill-page-pl-box-ul {
+    display: flex;
+    gap: 1em;
+}
+
+.pf-skill-page-pl-box {
+    list-style: none;
+    width: 18em;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em;
+    box-shadow: 1px 1px 5px 0 #7a7a7a;
+    transition: 0.3s;
+    gap: 0.8em;
+}
+
+.pf-skill-page-pl-box:hover {
+    transform: translateY(-20px);
+}
+
+.pf-skill-page-pl-box-img-sec {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pf-skill-page-pl-box-img-sec img {
+    width: 100px;
+    height: 100px;
+}
+
+.pf-skill-page-pl-box-t-sec {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pf-skil-p-box-t-sec-back {
+    position: absolute;
+    font-size: 10em;
+    opacity: 0.1;
+}
+
+.pf-skill-page-pl-box-t-sec ul {
+    padding-left: 1em;
+    color: var(--pf-col-mlight-text);
+    font-size: 0.95em;
+    display: grid;
+    gap: 0.5em;
+    font-size: 0.95em;
+}
+
+.pf-skill-page-pl-box-t-sec ul li {
+    list-style: circle inside;
+}
+
+
+/* Responsive CSS  */
+
+@media only screen and (max-width: 1268px) {
+    .pf-skill-page-pl-box {
+        width: 15em;
+    }
+
+    .pf-skill-page-pl-box-t-sec {
+        font-size: 0.93em;
+    }
+}
+
+@media only screen and (max-width: 1055px) {
+    .pf-skill-page-pl-box {
+        width: 14em;
+    }
+
+}
+
+@media only screen and (max-width: 1000px) {
+    /* .pf-skill-page-cont-container {
+        align-items: center;
+    } */
+
+    .pf-skill-page-pl-box-ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5em;
+    }
+
+    .pf-skill-page-pl-box {
+        width: 30vw;
+    }
+
+}
+
+@media only screen and (max-width: 850px) {
+    .pf-skill-page-pl-box {
+        width: 35vw;
+    }
+
+}
+
+@media only screen and (max-width: 780px) {
+    .pf-skill-page-pl-box {
+        width: 32vw;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+    .pf-skill-page-pl-box {
+        flex-direction: row;
+        width: 75vw;
+    }
+
+}
+
+@media only screen and (max-width: 510px) {
+    .pf-skill-page-pl-box {
+        flex-direction: row;
+        width: 75vw;
+    }
+
+    .pf-skill-page-pl-box-img-sec img {
+        width: 70px;
+        height: 70px;
+    }
+
+}
+
+@media only screen and (max-width: 510px) {
+    .pf-skill-page-pl-box {
+        width: 80vw;
+    }
+
+}

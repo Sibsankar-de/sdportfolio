@@ -1,0 +1,26 @@
+:root {
+    --pf-col-main-back: white;
+    --pf-nav-col-light: #f0f0f0;
+    --pf-col-violet: #9747ff;
+    --pf-col-sblue: #0c89e9;
+    --pf-col-light-text: #424242;
+    --pf-col-mlight-text: #373737;
+    --pf-col-nav-opt-dark: #4b4b4b;
+    --pf-col-lvio: #6012c6;
+    --pf-col-tvio: #6012c6c4;
+    --pf-col-d-condense: #161f3036;
+    --pf-col-m-condense: #d9d9d9;
+    --pf-body-font-color: #212529;
+}
+
+.dark-theme {
+    --pf-nav-col-light: #212529;
+    --pf-col-light-text: #cecece;
+    --pf-col-nav-opt-dark: #ffff;
+    --pf-col-mlight-text: #c7c7c7;
+    --pf-col-lvio: #ad8bd9;
+    --pf-col-main-back: #08111d;
+    --pf-col-d-condense: #161f3036;
+    --pf-col-m-condense: #181c23;
+    --pf-body-font-color: #f1f1f1;
+}

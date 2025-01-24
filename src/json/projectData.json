@@ -1,0 +1,167 @@
+[
+    {
+        "_id": "005",
+        "imgList": [
+            {
+                "imgUrl": "scribbletxt-dek1.png"
+            },
+            {
+                "imgUrl": "scribbletxt-dek2.png"
+            },
+            {
+                "imgUrl": "scribbletxt-ph1.png"
+            },
+            {
+                "imgUrl": "scribbletxt-ph2.png"
+            }
+        ],
+        "title": "Real-Time Chatting Website",
+        "description": "Developed a dynamic and responsive chatting application using the MERN stack (MongoDB, Express.js, React, Node.js). This project features real-time messaging, user authentication, and a scalable backend, demonstrating my expertise in full-stack development and my ability to create engaging and functional web applications.",
+        "buttons": [
+            {
+                "type": "repository",
+                "url": "https://github.com/Sibsankar-de/scribbletext"
+            },
+            {
+                "type": "website",
+                "url": "https://scribbletext.vercel.app"
+            }
+        ],
+        "tags": [
+            "React",
+            "Node.js",
+            "MongoDb",
+            "Express",
+            "Socket.io",
+            "Responsive design"
+        ]
+    },
+    {
+        "_id": "004",
+        "imgList": [
+            {
+                "imgUrl": "sdkart-dek1.jpg"
+            },
+            {
+                "imgUrl": "sdkart-dek2.jpg"
+            },
+            {
+                "imgUrl": "sdkart-dek3.jpg"
+            },
+            {
+                "imgUrl": "sdkart-dek4.jpg"
+            },
+            {
+                "imgUrl": "sdkart-ph2.jpg"
+            },
+            {
+                "imgUrl": "sdkart-ph1.jpg"
+            }
+        ],
+        "title": "Shopping App",
+        "description": "Showcasing advanced API handling skills, this cutting-edge shopping website is built with React and Node.js. Leveraging the power of the eBay API, users can explore a vast array of products with ease. Behind the scenes, a robust Node.js backend efficiently manages data retrieval and processing, ensuring a seamless user experience. The responsive design guarantees optimal performance across devices, making shopping a breeze for every user. Experience the synergy of efficient API integration and intuitive design on this feature-rich platform.",
+        "buttons": [
+            {
+                "type": "repository",
+                "url": "https://github.com/Sibsankar-de/sdkart"
+            },
+            {
+                "type": "website",
+                "url": "https://sibsankar-de.github.io/sdkart/"
+            }
+        ],
+        "tags": [
+            "React",
+            "Node js",
+            "Express",
+            "Responsive"
+        ]
+    },
+    
+    {
+        "_id": "003",
+        "imgList": [
+            {
+                "imgUrl": "sdweather-dek1.jpg"
+            },
+            {
+                "imgUrl": "sdweather-ph1.jpg"
+            },
+            {
+                "imgUrl": "sdweather-ph2.jpg"
+            }
+        ],
+        "title": "Weather App",
+        "description": "A responsive weather application built using React. This app seamlessly integrates with a weather API to provide real-time weather data for any location. Key features include dynamic weather updates, a user-friendly interface, and adaptability to various screen sizes, ensuring an optimal user experience on both desktop and mobile devices.",
+        "buttons": [
+            {
+                "type": "repository",
+                "url": "https://github.com/Sibsankar-de/sdweather"
+            },
+            {
+                "type": "website",
+                "url": "https://sibsankar-de.github.io/sdweather/"
+            }
+        ],
+        "tags": [
+            "React",
+            "Api Handle",
+            "Responsive"
+        ]
+    },
+
+    {
+        "_id": "002",
+        "imgList": [
+            {
+                "imgUrl": "tiktactoe_page.png"
+            }
+        ],
+        "title": "Tictactoe Game",
+        "description": "I designed and implemented a simple yet engaging Tic Tac Toe game using the React framework. Despite being new to game development, I successfully created an interactive and responsive gaming experience. This project showcases my ability to learn and apply new technologies effectively, as well as my proficiency in front-end web development with React.",
+        "buttons": [
+            {
+                "type": "repository",
+                "url": "https://github.com/Sibsankar-de/tictactoe"
+            },
+            {
+                "type": "website",
+                "url": "https://sibsankar-de.github.io/tictactoe/"
+            }
+        ],
+        "tags": [
+            "React",
+            "CSS",
+            "JavaScript"
+        ]
+    },
+
+    {
+        "_id": "001",
+        "imgList": [
+            {
+                "imgUrl": "portfolio_page.png"
+            },
+            {
+                "imgUrl": "portf-ph1.jpg"
+            }
+        ],
+        "title": "Portfolio Page",
+        "description": "I crafted my own personal portfolio website using React, showcasing my skills, projects, and resume. This project not only serves as a practical platform for displaying my work but also demonstrates my proficiency in front-end web development with React. It reflects my dedication to presenting myself professionally.",
+        "buttons": [
+            {
+                "type": "repository",
+                "url": "https://github.com/Sibsankar-de/sdportfolio"
+            },
+            {
+                "type": "website",
+                "url": "https://sibsankar-de.github.io/sdportfolio/"
+            }
+        ],
+        "tags": [
+            "React",
+            "Responsive design",
+            "CSS"
+        ]
+    }
+]

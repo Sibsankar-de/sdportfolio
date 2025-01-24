@@ -1,0 +1,123 @@
+.pf-about-cont-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6em;
+}
+
+.pf-about-p-content-box {
+    width: 35em;
+}
+
+.pf-ab-p-sub-h {
+    font-family: "Exo 2", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--pf-col-violet);
+}
+
+.pf-ab-p-des-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.pf-about-p-pf-img {
+    width: 250px;
+    outline: 20px solid var(--pf-col-violet);
+    padding: 1em;
+    border-radius: 20px 0px 20px 20px;
+    border-style: ridge;
+    outline-style: ridge;
+}
+
+.pf-about-p-pf-img-back {
+    position: absolute;
+    background-color: var(--pf-nav-col-light);
+    width: 20em;
+    height: 20em;
+    z-index: -1;
+    rotate: 49deg;
+}
+
+/* responsive css  */
+@media only screen and (max-width: 1140px) {
+    .pf-about-p-content-box {
+        width: 40vw;
+    }
+}
+
+@media only screen and (max-width: 1070px) {
+    .pf-about-p-content-box {
+        width: 45vw;
+    }
+
+    .pf-about-p-pf-img {
+        width: 200px;
+    }
+
+    .pf-about-p-pf-img-back {
+        width: 17em;
+        height: 17em;
+    }
+
+    .pf-ab-p-des-box {
+        gap: 0.6em;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .pf-about-p-pf-img {
+        width: 150px;
+    }
+
+    .pf-about-p-pf-img-back {
+        width: 15em;
+        height: 15em;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .pf-about-cont-container {
+        flex-direction: column;
+    }
+
+    .pf-about-cont-container .pf-ab-page-img-box {
+        margin-top: 10em;
+        /* display: none !important; */
+    }
+
+    .pf-about-p-pf-img {
+        width: 170px;
+    }
+
+    .pf-about-cont-container .pf-p-head {
+        margin-top: 1em !important;
+        margin-bottom: 1em !important;
+    }
+
+    .pf-about-p-content-box {
+        width: 70vw;
+    }
+}
+
+@media only screen and (max-width: 475px) {
+    .pf-about-p-content-box {
+        width: 85vw;
+    }
+}
+
+@media only screen and (max-width: 370px) {
+    .pf-about-p-pf-img {
+        width: 140px;
+        outline-width: 15px;
+    }
+
+    .pf-about-p-pf-img-back {
+        width: 12em;
+        height: 12em;
+    }
+}

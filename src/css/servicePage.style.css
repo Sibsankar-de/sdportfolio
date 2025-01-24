@@ -1,0 +1,114 @@
+
+.pf-service-page-cont-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3em;
+}
+
+.pf-s-p-hme-opt-box {
+    display: flex;
+    gap: 2em;
+}
+
+.pf-service-p-hm-logo-box {
+    padding: 2em;
+    box-shadow: 2px 2px 7px 0 #474747;
+    border-radius: 20px;
+    transition: 0.4s;
+    cursor: pointer;
+    background-color: var(--pf-col-d-condense);
+}
+
+.pf-service-p-hm-logo-box:hover {
+    transform: translateY(-15px);
+}
+
+.pf-service-p-hm-logo-box img {
+    width: 200px;
+    filter: drop-shadow(0px 0px 15px #41404285);
+}
+
+/* ########### */
+
+.pf-serv-p-cont-m-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.pf-serv-p-contact-me-cont {
+    padding: 1em;
+    color: white;
+    display: flex;
+    gap: 1em;
+    border-radius: 15px;
+    font-size: 1.2em;
+    transition: 0.3s;
+}
+
+.pf-mes-bg-grad {
+    background-image: linear-gradient(115deg, #d45454, var(--pf-col-violet), #84d4e4);
+}
+
+.pf-mail-bg-grad {
+    background-image: linear-gradient(115deg, #0e78e9, #5b8ee9, #5eabcd);
+}
+
+.pf-serv-p-contact-me-cont:hover {
+    box-shadow: 0px 0px 8px 0 #797979;
+}
+
+.pf-cont-sec-form-box {
+    width: 30em;
+    display: grid;
+    gap: 0.5em;
+}
+
+.pf-cont-sec-form-box textarea {
+    resize: none;
+    height: 10em;
+}
+
+/* Responsive css  */
+
+@media only screen and (max-width: 680px) {
+    .pf-service-p-hm-logo-box img {
+        width: 170px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .pf-service-p-hm-logo-box img {
+        width: 150px;
+    }
+}
+
+@media only screen and (max-width: 505px) {
+    .pf-service-p-hm-logo-box img {
+        width: 130px;
+    }
+
+    .pf-cont-sec-form-box {
+        width: 90vw;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .pf-service-p-hm-logo-box img {
+        width: 25vw;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .pf-s-p-hme-opt-box {
+        gap: 1em;
+    }
+}
+
+@media only screen and (max-width: 355px) {
+    .pf-service-p-hm-logo-box {
+        padding: 1.3em;
+    }
+}

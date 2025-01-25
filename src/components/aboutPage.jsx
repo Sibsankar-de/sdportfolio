@@ -3,21 +3,25 @@ import resumeFile from '../assets/pdf/resume.pdf'
 import { useActiveSection } from '../hooks/activeSection'
 import { ScrollAnimContainer } from '../utils/scroll-anim-container'
 import axios from 'axios'
+import { LoadingDot } from '../utils/loading-spinner'
 
 export const AboutPage = () => {
     const apiUri = process.env.REACT_APP_API_URI;
     const [resume, setResume] = useState(null);
+    const [loading, setLoading] = useState(false);
     useEffect(() => {
         const fetchList = async () => {
             try {
+                setLoading(true);
                 await axios.get(`${apiUri}/api/v1/user/get-resume/${process.env.REACT_APP_USER_ID}`, {
                     withCredentials: true
                 })
                     .then(res => {
-
-                        setResume(res.data?.data?.resume)
+                        setResume(res.data?.data?.resume);
+                        setLoading(false);
                     })
             } catch (error) {
+                setLoading(false);
                 console.log(error);
             }
         }
@@ -47,7 +51,7 @@ export const AboutPage = () => {
                         <div>
                             <span>I believe that every line of code has the power to shape experiences. As a Web developer, I’ve had the privilege of collaborating with talented teams, transforming ideas into reality. Curiosity fuels my passion—I’m always learning, exploring, and seeking inspiration from unexpected sources.</span>
                         </div>
-                        <div className='mt-1'><a href={resume} target="_blank" download={"sibsankar_frontenddev_resume"} ><button className="btn pf-btn-sblue" disabled={!resume ? true : false}>Resume</button></a></div>
+                        <div className='mt-1'><a href={resume} target="_blank" download={"sibsankar_frontenddev_resume"} ><button className="btn pf-btn-sblue" disabled={loading}>{loading && <LoadingDot />} Resume</button></a></div>
                     </div>
                 </ScrollAnimContainer>
             </div>

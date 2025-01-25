@@ -110,7 +110,7 @@ export const ServicesPage = () => {
                     </section>
                 </div>
                 <div className='pf-cont-sec-form-box mb-5'>
-                    <div className='mb-0 text-success'><span><i className="ri-information-2-line"></i></span> <span>Please use a valid email to get reply</span></div>
+                    <div className='mb-0 text-success'><span><i className="ri-information-2-line"></i></span> <span>Please use a valid email so that I can reply!🤗</span></div>
                     <form action="" className='d-grid gap-3' onSubmit={mailSubmitHandler}>
                         <div>
                             {messageObj.email.length > 0 &&
@@ -124,7 +124,7 @@ export const ServicesPage = () => {
                             }
                             <textarea className='form-control' placeholder='Leave a message ' name='message' onChange={e => setMessageObj({ ...messageObj, message: e.target.value })} value={messageObj.message} />
                         </div>
-                        <div className='pf-js-s-end'><button className="btn btn-success rounded-3 d-flex gap-2" type='submit' disabled={loading}>{loading && <span><LoadingDot width={20} /></span>} <span>Send</span></button></div>
+                        <div className='pf-js-s-end'><button className="btn btn-success rounded-3 d-flex gap-2" type='submit' disabled={loading}>{loading && <span><LoadingDot width={20} /></span>} <span>Send message</span></button></div>
                     </form>
                 </div>
             </ScrollAnimContainer>

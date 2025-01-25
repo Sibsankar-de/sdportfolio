@@ -186,11 +186,11 @@ const ProjectItemCard = ({ project, onImgClick }) => {
             </div>
 
             <div className={`pf-project-p-cont-box pf-project-full-des-box pf-project-cont-box-anim ${!openDesBox && 'pf-project-p-cont-box-disabled'}`} >
-                <div className='d-flex gap-3 align-items-center'>
+                <div className='d-flex gap-3 align-items-center pf-proj-p-cont-box-heading-box'>
                     <div>
                         <button onClick={() => setOpenDesBox(false)} className='pf-back-arrow-btn'><span><i className="ri-arrow-left-s-line fs-5"></i></span></button>
                     </div>
-                    <div className='pf-proj-p-cont-box-heading-box'><span>{project?.title || `Untitled ${project._id}`}</span></div>
+                    <div className='pf-proj-p-cont-box-heading'><span>{project?.title || `Untitled ${project._id}`}</span></div>
                 </div>
                 <div>
                     <pre className='pf-proj-p-cont-box-des-line'>

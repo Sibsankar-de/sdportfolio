@@ -9,6 +9,7 @@ body {
   scroll-behavior: smooth;
   background-color: var(--pf-col-main-back);
   color: var(--pf-body-font-color);
+  transition: background-color 0.3s, color 0.5s;
 }
 
 ::-webkit-scrollbar {

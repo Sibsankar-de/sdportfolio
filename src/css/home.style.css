@@ -158,6 +158,7 @@
 
 .pf-h-des-3 {
     font-weight: bold;
+    font-size: 1.1em;
     color: var(--pf-col-light-text);
     margin-bottom: 0.9em;
 }
@@ -169,7 +170,25 @@
 
 .pf-home-img-box img {
     width: 400px;
-    border-radius: 50%;
+    filter: contrast(1.05);
+}
+
+.pf-beep-anim {
+    animation: pf-beep-anim 1s infinite;
+}
+
+@keyframes pf-beep-anim {
+
+    0%,
+    100% {
+        transform: scaleY(0);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scaleY(1);
+        opacity: 1;
+    }
 }
 
 /* ################ */

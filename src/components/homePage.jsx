@@ -22,7 +22,43 @@ export const HomePage = () => {
         })
         document.addEventListener('scroll', () => sNavOpen && setSNavOpen(false))
 
-    })
+    });
+
+    // Handle skills show
+    const skills = [
+        "Full-stack Web development",
+        "Next.js Development",
+        "MERN Stack Development",
+        "Machine Learning",
+        "Generative AI"
+    ];
+    const [displayedSkill, setDisplayedSkill] = useState('');
+    const [skillIndex, setSkillIndex] = useState(0);
+    const [charIndex, setCharIndex] = useState(0);
+    const [isDeleting, setIsDeleting] = useState(false);
+
+    useEffect(() => {
+        let typingSpeed = isDeleting ? 50 : 90;
+        let timeout;
+
+        if (!isDeleting && charIndex <= skills[skillIndex].length) {
+            setDisplayedSkill(skills[skillIndex].substring(0, charIndex));
+            timeout = setTimeout(() => setCharIndex(charIndex + 1), typingSpeed);
+        } else if (isDeleting && charIndex >= 0) {
+            setDisplayedSkill(skills[skillIndex].substring(0, charIndex));
+            timeout = setTimeout(() => setCharIndex(charIndex - 1), typingSpeed);
+        } else if (!isDeleting && charIndex > skills[skillIndex].length) {
+            timeout = setTimeout(() => setIsDeleting(true), 2500);
+        } else if (isDeleting && charIndex < 0) {
+            setIsDeleting(false);
+            setSkillIndex((skillIndex + 1) % skills.length);
+            setCharIndex(0);
+        }
+
+        return () => clearTimeout(timeout);
+    }, [charIndex, isDeleting, skillIndex, skills]);
+
+    // You can use `displayedSkill` in your JSX where you want the animated skill to appear.
 
     // Toogle btn handler 
     const { currentTheme, setCurrentTheme } = useContext(ThemeContext);
@@ -166,14 +202,14 @@ export const HomePage = () => {
                         <div className='pf-h-des-2'>
                             <span>Sibsankar De</span>
                         </div>
-                        <div className='pf-h-des-3'>
-                            <span>Fullstack Web Developer</span>
+                        <div className='pf-h-des-3 d-flex align-items-center'>
+                            <span>{displayedSkill}</span> <span className='d-flex pf-beep-anim'><i className="ri-git-commit-fill" style={{rotate: 90}}></i></span>
                         </div>
                         <div className='pf-h-des-4'>Welcome to my web development portfolio! Dive into a showcase of my coding craftsmanship. Let's build something incredible together. Your vision, my code.</div>
                         <div><HashLink to="#services"><button className="btn pf-btn-vio">Hire me!</button></HashLink></div>
                     </ScrollAnimContainer>
                     <ScrollAnimContainer className='pf-home-img-box' activeSec={'home'} animDirection='bottom' >
-                        <img src={require('../assets/img/profile_img.png')} alt="" draggable={false} onContextMenu={e => e.preventDefault()} />
+                        <img src={require('../assets/img/my_image_resized.png')} alt="" draggable={false} onContextMenu={e => e.preventDefault()} />
                     </ScrollAnimContainer>
                 </div>
                 <div className='pf-home-contact-box' >

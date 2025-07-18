@@ -1,30 +1,43 @@
 [
     {
         "text": "React",
-        "xml": "<i class='ri-reactjs-line'></i>"
+        "xml": "<i className='ri-reactjs-line'></i>"
+    },
+    {
+        "text": "Next",
+        "xml": "<i className='ri-nextjs-line'></i>"
     },
     {
         "text": "Node",
-        "xml": "<i class='ri-nodejs-line'></i>"
+        "xml": "<i className='ri-nodejs-line'></i>"
     },
     {
         "text":"CSS",
-        "xml":"<i class='ri-css3-line'></i>"
+        "xml":"<i className='ri-css3-line'></i>"
     },
     {
         "text": "html",
-        "xml":"<i class='ri-html5-line'></i>"
+        "xml":"<i className='ri-html5-line'></i>"
     },
     {
         "text": "api",
-        "xml":"<i class='ri-server-line'></i>"
+        "xml":"<i className='ri-server-line'></i>"
     },
     {
         "text": "responsive",
-        "xml":"<i class='ri-crop-line'></i>"
+        "xml":"<i className='ri-crop-line'></i>"
     },
     {
         "text": "javascript",
-        "xml":"<i class='ri-javascript-fill'></i>"
+        "xml":"<i className='ri-javascript-fill'></i>"
+    },
+    {
+        "text": "ai",
+        "xml":"<i className='ri-ai-generate-2'></i>"
+    },
+    {
+        "text": "tailwind",
+        "xml":"<i className='ri-tailwind-css-fill'></i>"
     }
+
 ]

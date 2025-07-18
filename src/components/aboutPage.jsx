@@ -34,7 +34,7 @@ export const AboutPage = () => {
         <>
             <div className='pf-about-cont-container' >
                 <ScrollAnimContainer className='pf-common-prop pf-ab-page-img-box' activeSec={'about'} animDirection='left' >
-                    <div><img src={require('../assets/img/profile_img.png')} alt="" className='pf-about-p-pf-img' draggable={false} onContextMenu={e => e.preventDefault()} /></div>
+                    <div><img src={require('../assets/img/profile-image-short-frame.png')} alt="" className='pf-about-p-pf-img' draggable={false} onContextMenu={e => e.preventDefault()} /></div>
                     <div className='pf-about-p-pf-img-back'></div>
                 </ScrollAnimContainer>
                 <ScrollAnimContainer className='pf-about-p-content-box' activeSec={'about'} animDirection={'right'}  >

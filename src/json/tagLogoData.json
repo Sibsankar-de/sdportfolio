@@ -12,6 +12,10 @@
         "xml": "<i className='ri-nodejs-line'></i>"
     },
     {
+        "text": "tailwind",
+        "xml":"<i className='ri-tailwind-css-fill'></i>"
+    },
+    {
         "text":"CSS",
         "xml":"<i className='ri-css3-line'></i>"
     },
@@ -35,9 +39,5 @@
         "text": "ai",
         "xml":"<i className='ri-ai-generate-2'></i>"
     },
-    {
-        "text": "tailwind",
-        "xml":"<i className='ri-tailwind-css-fill'></i>"
-    }
 
 ]

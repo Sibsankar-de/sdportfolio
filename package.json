@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
-    "@sweetalert2/theme-borderless": "^5.0.16",
     "@sweetalert2/theme-dark": "^5.0.16",
     "@sweetalert2/themes": "^5.0.16",
     "@testing-library/jest-dom": "^5.17.0",
